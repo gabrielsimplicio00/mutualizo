@@ -25,3 +25,23 @@ def get_average_words_length(sentence: str):
         total_words += 1
 
     return round(total_words_length/total_words, 2)
+
+@app.get("/matched_mismatched_words")
+def matched_mismatched_words(sentence1: str, sentence2: str):
+    regex = r'\W+'
+    words_list = list(filter(None, re.split(regex, sentence1))) # todas as palavras da frase sao armazenadas na variavel em forma de lista
+    words_list2 = list(filter(None, re.split(regex, sentence2)))# as duas listas serao iteradas para verificar as palavras em comum
+    matched_words= set()
+    mismatched_words = set()
+
+    for word in words_list:
+        if word in words_list2:
+            matched_words.add(word)
+        else:
+            mismatched_words.add(word)
+
+    for word in words_list2:
+        if word not in words_list:
+            mismatched_words.add(word)
+    
+    return [mismatched_words, matched_words]
