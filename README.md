@@ -8,9 +8,9 @@ Antes de prosseguir, certifique-se de que o [Python](https://www.python.org/down
 
 - [Rodando localmente](#Rodando-localmente)
 - [Autenticação e autorização](#Autenticação-e-autorização)
-- [Documentação da API](#Documentação-da-API)
+- [Documentação da API](#Documentação-das-rotas-da-API)
 - [Rodando os testes](#Rodando-os-testes)
-- [Ferramentas utilizadas](#Stacks-utilizadas)
+- [Ferramentas utilizadas](#Ferramentas-utilizadas)
 - [Referências](#Referências)
 
 
@@ -66,6 +66,7 @@ Ao acessar a documentação automática do FastAPI em __http://localhost:8000/do
 Caso haja tentativa de acesso aos endpoints sem autorização prévia, uma resposta HTTP de código 401 _(Unauthorized)_ será lançada.
 
 A API em questão utiliza OAuth2 como meio de autenticação, caso queira efetuar os testes em um programa próprio (Postman ou Insomnia), o token de autorização é __Bearer userteste__.
+
 ## Documentação das rotas da API
 
 Em seu computador, a URL padrão de acesso é:
@@ -77,7 +78,7 @@ Em seu computador, a URL padrão de acesso é:
 Porém, existem outras alternativas para testar as funcionalidades de forma mais prática.
 
 
-## Documentação automática do  FastAPI
+## Documentação automática do FastAPI
 
 Para fazer as requisições de forma mais prática, o FastAPI já vem com duas rotas embutidas, que redirecionam a API para uma interface Swagger, nessas rotas é possível testar todas as funcionalidades de forma prática.
 
