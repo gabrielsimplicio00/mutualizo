@@ -3,7 +3,7 @@
 
 Projeto de API feito com o propósito de teste, que realiza diferentes tarefas de acordo com o endpoint chamado, o projeto em questão utiliza Docker para baixar as dependências da aplicação, criar uma imagem da mesma e subir o servidor através do docker-compose.
 
-Antes de prosseguir, certifique-se de que o [Python](https://www.python.org/downloads/) e o [Docker Desktop](https://www.docker.com/products/docker-desktop/) estejam instalados na sua máquina local, a versão do Python utilizada é a 3.11. O Docker Desktop precisa estar ativo no momento do teste, para que o passo a passo abaixo seja eficaz. Também será necessário utilizar um editor de códigos de sua escolha, como o [VSCode](https://code.visualstudio.com/download) ou o [PyCharm](https://www.jetbrains.com/pycharm/download/).
+Antes de prosseguir, certifique-se de que o [Docker Desktop](https://www.docker.com/products/docker-desktop/) esteja instalado na sua máquina local. O Docker Desktop precisa estar ativo no momento do teste, para que o passo a passo abaixo seja eficaz.
 ## Sumário
 
 - [Rodando localmente](#Rodando-localmente)
@@ -99,7 +99,7 @@ As query strings são essenciais para fornecimento dos parâmetros para as funç
 Exemplo:
 
 ```http
-  GET /reverse_integers?num_str=-123
+  GET /reverse_integers?integer=-123
 ```
 
 ```
@@ -110,7 +110,7 @@ Exemplo:
 
 | Query   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `num_str`      | `string` | **Obrigatório**. O número que será invertido |
+| `integer`      | `string` | **Obrigatório**. O número que será invertido |
 
 ### Retorna o comprimento médio das palavras de uma frase
 
