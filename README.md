@@ -50,7 +50,7 @@ Para desativar o servidor local, utilize o comando Ctrl+C.
 
 ## Autenticação e autorização
 
-Antes de testar as rotas, é necessário falar sobre a segurança da API. Um mock de banco de dados foi utilizado para simular a existência de usuários previamente cadastrados. A partir de um nome de usuário e senha, a autorização para acessar as rotas é concedida. Os dados dos usuários podem ser encontrados em __src/users.py__.
+Antes de testar as rotas, é necessário falar sobre a segurança da API. Um banco de dados fake foi utilizado para simular a existência de usuários previamente cadastrados. A partir de um nome de usuário e senha, a autorização para acessar as rotas é concedida. Os dados dos usuários podem ser encontrados em __src/users.py__.
 
 Existem, no total, 2 usuários no banco. Um deles está habilitado para fazer login, já o outro se encontra desabilitado. Tentar efetuar o login com o usuário desabilitado levará em erro.
 
@@ -61,7 +61,7 @@ Dados do usuário habilitado:
     password: "secret"
 ```
 
-Ao acessar a documentação automática do FastAPI em __http://localhost:8000/docs__, haverá um botão "Authorize" no canto direito. Ao clicar no botão e inserir os dados do usuário você estará autorizado a acessar os endpoints (os dois campos abaixo de username e password não precisam ser preenchidos).
+Ao acessar a documentação automática do FastAPI em __http://localhost:8000/docs__, haverá um botão "Authorize" no canto direito. Ao clicar no botão e inserir os dados do usuário você estará autorizado a acessar os endpoints (os campos abaixo de username e password não precisam ser preenchidos).
 
 Caso haja tentativa de acesso aos endpoints sem autorização prévia, uma resposta HTTP de código 401 _(Unauthorized)_ será lançada.
 
