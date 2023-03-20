@@ -9,6 +9,7 @@ Antes de prosseguir, certifique-se de que o [Docker Desktop](https://www.docker.
 - [Rodando localmente](#Rodando-localmente)
 - [Documentação das rotas da API](#Documentação-das-rotas-da-API)
 - [Autenticação e autorização](#Autenticação-e-autorização)
+- [Rotas existentes](#Rotas-existentes)
 - [Rodando os testes](#Rodando-os-testes)
 - [Ferramentas utilizadas](#Ferramentas-utilizadas)
 - [Referências](#Referências)
