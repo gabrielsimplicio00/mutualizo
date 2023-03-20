@@ -8,7 +8,7 @@ Antes de prosseguir, certifique-se de que o [Docker Desktop](https://www.docker.
 
 - [Rodando localmente](#Rodando-localmente)
 - [Autenticação e autorização](#Autenticação-e-autorização)
-- [Documentação da API](#Documentação-das-rotas-da-API)
+- [Documentação das rotas da API](#Documentação-das-rotas-da-API)
 - [Rodando os testes](#Rodando-os-testes)
 - [Ferramentas utilizadas](#Ferramentas-utilizadas)
 - [Referências](#Referências)
@@ -80,14 +80,10 @@ Porém, existem outras alternativas para testar as funcionalidades de forma mais
 
 ## Documentação automática do FastAPI
 
-Para fazer as requisições de forma mais prática, o FastAPI já vem com duas rotas embutidas, que redirecionam a API para uma interface Swagger, nessas rotas é possível testar todas as funcionalidades de forma prática.
+Para fazer as requisições de forma mais prática, o FastAPI já vem com uma rota embutida, que redireciona a API para uma interface Swagger, nessa rota é possível testar todas as funcionalidades de forma prática.
 
 ```http
   http://localhost:8000/docs
-
-  ou
-
-  http://localhost:8000/redocs
 ```
 
 ## Rotas existentes
@@ -110,7 +106,7 @@ Exemplo:
 
 | Query   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `integer`      | `string` | **Obrigatório**. O número que será invertido |
+| `integer`      | `int` | **Obrigatório**. O número que será invertido |
 
 ### Retorna o comprimento médio das palavras de uma frase
 
