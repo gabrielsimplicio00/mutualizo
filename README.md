@@ -7,8 +7,8 @@ Antes de prosseguir, certifique-se de que o [Docker Desktop](https://www.docker.
 ## Sumário
 
 - [Rodando localmente](#Rodando-localmente)
-- [Autenticação e autorização](#Autenticação-e-autorização)
 - [Documentação das rotas da API](#Documentação-das-rotas-da-API)
+- [Autenticação e autorização](#Autenticação-e-autorização)
 - [Rodando os testes](#Rodando-os-testes)
 - [Ferramentas utilizadas](#Ferramentas-utilizadas)
 - [Referências](#Referências)
