@@ -48,6 +48,24 @@ Esse comando irá usar as informações do arquivo docker-compose.yml para subir
 
 Para desativar o servidor local, utilize o comando Ctrl+C.
 
+## Documentação das rotas da API
+
+Em seu computador, a URL padrão de acesso é:
+
+```http
+  http://localhost:8000
+```
+
+Porém, existem outras alternativas para testar as funcionalidades de forma mais prática.
+
+## Documentação automática do FastAPI
+
+Para fazer as requisições de forma mais prática, o FastAPI já vem com uma rota embutida, que redireciona a API para uma interface Swagger, nessa rota é possível testar todas as funcionalidades de forma prática.
+
+```http
+  http://localhost:8000/docs
+```
+
 ## Autenticação e autorização
 
 Antes de testar as rotas, é necessário falar sobre a segurança da API. Um banco de dados fake foi utilizado para simular a existência de usuários previamente cadastrados. A partir de um nome de usuário e senha, a autorização para acessar as rotas é concedida. Os dados dos usuários podem ser encontrados em __src/users.py__.
@@ -66,25 +84,6 @@ Ao acessar a documentação automática do FastAPI em __http://localhost:8000/do
 Caso haja tentativa de acesso aos endpoints sem autorização prévia, uma resposta HTTP de código 401 _(Unauthorized)_ será lançada.
 
 A API em questão utiliza OAuth2 como meio de autenticação, caso queira efetuar os testes em um programa próprio (Postman ou Insomnia), o token de autorização é __Bearer userteste__.
-
-## Documentação das rotas da API
-
-Em seu computador, a URL padrão de acesso é:
-
-```http
-  http://localhost:8000
-```
-
-Porém, existem outras alternativas para testar as funcionalidades de forma mais prática.
-
-
-## Documentação automática do FastAPI
-
-Para fazer as requisições de forma mais prática, o FastAPI já vem com uma rota embutida, que redireciona a API para uma interface Swagger, nessa rota é possível testar todas as funcionalidades de forma prática.
-
-```http
-  http://localhost:8000/docs
-```
 
 ## Rotas existentes
 
