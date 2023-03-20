@@ -8,7 +8,7 @@ Antes de prosseguir, certifique-se de que o [Docker Desktop](https://www.docker.
 
 - [Rodando localmente](#Rodando-localmente)
 - [Autenticação e autorização](#Autenticação-e-autorização)
-- [Documentação da API](#Documentação-das-rotas-da-API)
+- [Documentação das rotas da API](#Documentação-das-rotas-da-API)
 - [Rodando os testes](#Rodando-os-testes)
 - [Ferramentas utilizadas](#Ferramentas-utilizadas)
 - [Referências](#Referências)
@@ -110,7 +110,7 @@ Exemplo:
 
 | Query   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `integer`      | `string` | **Obrigatório**. O número que será invertido |
+| `integer`      | `int` | **Obrigatório**. O número que será invertido |
 
 ### Retorna o comprimento médio das palavras de uma frase
 
