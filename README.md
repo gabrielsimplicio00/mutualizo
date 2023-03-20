@@ -3,14 +3,14 @@
 
 Projeto de API feito com o propósito de teste, que realiza diferentes tarefas de acordo com o endpoint chamado, o projeto em questão utiliza Docker para baixar as dependências da aplicação, criar uma imagem da mesma e subir o servidor através do docker-compose.
 
-Antes de prosseguir, certifique-se de que o [Python](https://www.python.org/downloads/) e o [Docker Desktop](https://www.docker.com/products/docker-desktop/) estejam instalados na sua máquina local, a versão do Python utilizada é a 3.11. O Docker Desktop precisa estar ativo no momento do teste, para que o passo a passo abaixo seja eficaz. Também será necessário utilizar um editor de códigos de sua escolha, como o [VSCode](https://code.visualstudio.com/download) ou o [PyCharm](https://www.jetbrains.com/pycharm/download/).
+Antes de prosseguir, certifique-se de que o [Docker Desktop](https://www.docker.com/products/docker-desktop/) esteja instalado na sua máquina local. O Docker Desktop precisa estar ativo no momento do teste, para que o passo a passo abaixo seja eficaz.
 ## Sumário
 
 - [Rodando localmente](#Rodando-localmente)
 - [Autenticação e autorização](#Autenticação-e-autorização)
-- [Documentação da API](#Documentação-da-API)
+- [Documentação da API](#Documentação-das-rotas-da-API)
 - [Rodando os testes](#Rodando-os-testes)
-- [Ferramentas utilizadas](#Stacks-utilizadas)
+- [Ferramentas utilizadas](#Ferramentas-utilizadas)
 - [Referências](#Referências)
 
 
@@ -66,6 +66,7 @@ Ao acessar a documentação automática do FastAPI em __http://localhost:8000/do
 Caso haja tentativa de acesso aos endpoints sem autorização prévia, uma resposta HTTP de código 401 _(Unauthorized)_ será lançada.
 
 A API em questão utiliza OAuth2 como meio de autenticação, caso queira efetuar os testes em um programa próprio (Postman ou Insomnia), o token de autorização é __Bearer userteste__.
+
 ## Documentação das rotas da API
 
 Em seu computador, a URL padrão de acesso é:
@@ -77,7 +78,7 @@ Em seu computador, a URL padrão de acesso é:
 Porém, existem outras alternativas para testar as funcionalidades de forma mais prática.
 
 
-## Documentação automática do  FastAPI
+## Documentação automática do FastAPI
 
 Para fazer as requisições de forma mais prática, o FastAPI já vem com duas rotas embutidas, que redirecionam a API para uma interface Swagger, nessas rotas é possível testar todas as funcionalidades de forma prática.
 
@@ -98,7 +99,7 @@ As query strings são essenciais para fornecimento dos parâmetros para as funç
 Exemplo:
 
 ```http
-  GET /reverse_integers?num_str=-123
+  GET /reverse_integers?integer=-123
 ```
 
 ```
@@ -109,7 +110,7 @@ Exemplo:
 
 | Query   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `num_str`      | `string` | **Obrigatório**. O número que será invertido |
+| `integer`      | `string` | **Obrigatório**. O número que será invertido |
 
 ### Retorna o comprimento médio das palavras de uma frase
 

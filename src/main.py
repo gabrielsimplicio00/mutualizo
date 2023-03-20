@@ -8,7 +8,7 @@ from users import fake_users_db
 
 app = FastAPI()
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth")
 
 class User(BaseModel):
     username: str
@@ -22,7 +22,7 @@ class UserInDB(User):
 def generate_fake_hash_password(password: str):
     return "fakehashed" + password
 
-@app.post("/token") # função que lida com autenticação de usuário, necessária para todas as rotas
+@app.post("/auth") # função que lida com autenticação de usuário, necessária para todas as rotas
 async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     # os dados do campo username preenchido vão servir para buscar o usuário no banco de dados fake
     user_dict = fake_users_db.get(form_data.username)
@@ -41,12 +41,13 @@ def generate_words_list(sentence): # a lógica de dividir frases em listas de pa
     return words_list
 
 @app.get("/reverse_integers")
-def get_reverse_integers(num_str: str, token: str = Depends(oauth2_scheme)):
-    if num_str[0] == '-':
-        minus = num_str[0] # se o numero for negativo, o sinal de menos é armazenado para ser usado posteriormente
-        num_reversed = num_str[::-1][:-1] # [::-1] itera sobre os itens e os mostra de maneira invertida, [:-1] retira o ultimo elemento (que nesse caso é o sinal -)
+def get_reverse_integers(integer: int, token: str = Depends(oauth2_scheme)):
+    integer = str(integer) # tipar a variavel de modo que só sejam aceitos números inteiros, depois fazer o casting para str e iterar
+    if integer[0] == '-':
+        minus = integer[0] # se o numero for negativo, o sinal de menos é armazenado para ser usado posteriormente
+        num_reversed = integer[::-1][:-1] # [::-1] itera sobre os itens e os mostra de maneira invertida, [:-1] retira o ultimo elemento (que nesse caso é o sinal -)
         return {"resultado": f"{minus}{num_reversed}"}
-    return {"resultado": num_str[::-1]}
+    return {"resultado": integer[::-1]}
 
 @app.get("/average_words_length")
 def get_average_words_length(sentence: str, token: str = Depends(oauth2_scheme)):
